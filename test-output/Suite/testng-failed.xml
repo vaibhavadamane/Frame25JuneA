@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test name="Test(failed)">
+    <groups>
+      <run>
+        <include name="Smoke"/>
+        <exclude name="Sainty"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="TestCases.GroupTest">
+        <methods>
+          <include name="remove2ProductTest"/>
+          <include name="gotoNextPage3Test"/>
+          <include name="setup"/>
+          <include name="closeBroswer"/>
+        </methods>
+      </class> <!-- TestCases.GroupTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
