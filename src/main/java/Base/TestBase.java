@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utility.ReadData1_1;
@@ -18,15 +19,17 @@ public class TestBase
 	
 	public void initalization() throws Exception
 	{
-	WebDriverManager.chromedriver().setup();
-    driver =new ChromeDriver();
+//	WebDriverManager.chromedriver().setup();
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\hp\\Eclipse Workplace\\Frame25JuneA\\Driver\\chromedriver.exe");	
+	ChromeOptions o = new ChromeOptions();
+	o.addArguments("--remote-allow-origins=*");
+	driver =new ChromeDriver(o);
     driver.manage().deleteAllCookies();
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-   // driver.get("https://www.saucedemo.com/");
-	driver.get(ReadData1_1.readPropertyfile1("url"));	
+    driver.get("https://www.saucedemo.com/");
+//	driver.get(ReadData1_1.readPropertyfile1("url"));	
 	}
 }
 
-//My name is vaibhav adamane 
-//I have complited my msc
+

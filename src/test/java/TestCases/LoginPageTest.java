@@ -1,5 +1,7 @@
 package TestCases;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -14,7 +16,7 @@ public class LoginPageTest extends TestBase
 	
 	//Here we used the Keyword like priority,enabled,count,dependsOnMethods.invacationCount,Timeout
 	
-    @BeforeMethod
+    @BeforeMethod(alwaysRun=true)
 	public void setup() throws Exception 
     {
     	initalization();
@@ -31,54 +33,55 @@ public class LoginPageTest extends TestBase
     //The application argument not finding within time.
     
     
-    @Test(enabled = true,priority = 1,invocationCount=1,timeOut=50)
+    //the follwing method is not excuted becasue exculded method is also assiggn to this method
+    @Test/*(enabled = true,priority = 1,invocationCount=1,timeOut=50,groups= {"Sainity","Smoke","Regression"})*/
 	public void verifyTitleTest()
 	{
        String title = login.verifyTitle();
-       Assert.assertEquals(title, "Swag Labs");
+       AssertJUnit.assertEquals(title, "Swag Labs");
 	}
 	
-    @Test(enabled = false,priority = 2)
+    /*@Test(enabled = true,priority = 2,groups="Sainity")
     public void verifyCurrentUrlTest()
 	{
     	String url = login.verifyCurrentUrl();
-    	Assert.assertEquals(url, "https://www.saucedemo.com/");
+    	AssertJUnit.assertEquals(url, "https://www.saucedemo.com/");
 	}
     
-    @Test(enabled = false)
+    @Test(enabled = true,priority=3,groups="Regression")
     public void verifySwagLabLogoTest()
     {
     	boolean logo1 = login.verifySwagLabsLogo();
-    	Assert.assertEquals(logo1,true);
+    	AssertJUnit.assertEquals(logo1,true);
     }
     
     @Test(enabled = false)
     public void verifyImgTest()
     {
-       Assert.assertEquals(login.verifyImg(),true); //Apply different way
+       AssertJUnit.assertEquals(login.verifyImg(),true); //Apply different way
     }
     
-    @Test(enabled = false,priority = 5,timeOut=4000)
+    @Test(enabled = true,priority = 3,timeOut=4000)
     public void loginApp1Page2Test() throws Exception
     {
     	String label = login.loginApp1();
-        Assert.assertEquals(label,"1PRODUCTS");
+        AssertJUnit.assertEquals(label,"PRODUCTS");
     }
     
-    @Test(enabled = false,dependsOnMethods = "loginApp1Page2Test",priority = 3)
+    @Test(enabled = true,dependsOnMethods = "loginApp1Page2Test",priority = 2)
     public void verifyCurrentUrl1Test() throws Exception
     {
-    	Assert.assertEquals("https://www.saucedemo.com/inventory.html",login.verifyCurrentUrl1());//Apply different way.
+    	AssertJUnit.assertEquals("https://www.saucedemo.com/inventory.html",login.verifyCurrentUrl1());//Apply different way.
     }
     
-    @Test(enabled = false,dependsOnMethods = "loginApp1Page2Test",priority = 4)
+    @Test(enabled = true,dependsOnMethods = "loginApp1Page2Test",priority = 1)
     public void verifyTitle1Test() throws Exception
     {
     String title1 = login.verifyTitle1();
-    Assert.assertEquals(title1,"Swag Labs");
-    }
+    AssertJUnit.assertEquals(title1,"Swag Labs");
+    }*/
    
-     @AfterMethod
+     @AfterMethod(alwaysRun=true)
 	public void closeBroswer()
 	{
        driver.close();

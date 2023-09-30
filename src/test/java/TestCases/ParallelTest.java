@@ -32,10 +32,10 @@ public class ParallelTest
 	@Test
 	public void openSwagLabs() throws Exception //Firefox Browser.
 	{
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-//		WebDriverManager.firefoxdriver().setup();
-//		WebDriver driver = new FirefoxDriver();
+//		WebDriverManager.chromedriver().setup();
+//		WebDriver driver = new ChromeDriver();
+		WebDriverManager.firefoxdriver().setup();
+		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get("https://www.google.com/");
@@ -46,10 +46,10 @@ public class ParallelTest
 	@Test
 	public void amzonApp() throws Exception //Edge Broswer
 	{
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-//		WebDriverManager.edgedriver().setup();
-//		WebDriver driver = new EdgeDriver();
+//		WebDriverManager.chromedriver().setup();
+//		WebDriver driver = new ChromeDriver();
+		WebDriverManager.edgedriver().setup();
+		WebDriver driver = new EdgeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get("https://www.saucedemo.com/");

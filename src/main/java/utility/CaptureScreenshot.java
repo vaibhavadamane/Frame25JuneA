@@ -29,7 +29,7 @@ public class CaptureScreenshot extends TestBase1_1
 	public static void Screenshot1(String name) throws Exception //Here this method give us method name which give by it.getName(); method 
 	{
 		File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		File dest = new File("C:\\Users\\hp\\eclipse-workspace\\Frame25JuneA\\ScreenShots/"+name+".jpeg");
+		File dest = new File("C:\\Users\\hp\\Eclipse Workplace\\Frame25JuneA\\ScreenShots/"+name+".jpeg");
 		FileHandler.copy(source, dest);
 	}
 	
@@ -37,7 +37,7 @@ public class CaptureScreenshot extends TestBase1_1
 	public static void Sreenshots2(String name) throws Exception
 	{
         File source = com.finalBigLogo1.getScreenshotAs(OutputType.FILE);
-        File dest = new File("C:\\Users\\hp\\eclipse-workspace\\Frame25JuneA\\ScreenShots/"+name+".jpeg");
+        File dest = new File("C:\\Users\\hp\\Eclipse Workplace\\Frame25JuneA\\ScreenShots/"+name+".jpeg");
         FileHandler.copy(source, dest);
 	}
 	

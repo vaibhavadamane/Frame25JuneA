@@ -60,10 +60,10 @@ public class LoginPage extends TestBase
 	//Method to login the Application and verify the label of inventory page
 	public String loginApp1() throws Exception
 	{
-		//usernameTextbox.sendKeys("standard_user");
-		usernameTextbox.sendKeys(ReadData1_1.readPropertyfile1("username"));
-		//passwordTextbox.sendKeys("secret_sauce");
-		passwordTextbox.sendKeys(ReadData1_1.readPropertyfile1("password"));
+		usernameTextbox.sendKeys("standard_user");
+//		usernameTextbox.sendKeys(ReadData1_1.readPropertyfile1("username"));
+		passwordTextbox.sendKeys("secret_sauce");
+//		passwordTextbox.sendKeys(ReadData1_1.readPropertyfile1("password"));
 		loginBtn.click();
 		return productLabel.getText();
 	}

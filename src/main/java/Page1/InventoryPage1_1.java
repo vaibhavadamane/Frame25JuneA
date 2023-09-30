@@ -41,6 +41,7 @@ public class InventoryPage1_1 extends TestBase1_1
 			String count = productCounIcon.getText();
 		    return count;
 		}
+
 		
 		//Method which is verify that 2 product add successfully or not
 		public String add2Product()

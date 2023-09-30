@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -23,8 +24,11 @@ public class TestBase1_1
 		String bro = ReadData1_1.readPropertyfile1("browser");
 		if(bro.equals("chrome"))
 		{
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+//			WebDriverManager.chromedriver().setup();
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\hp\\Eclipse Workplace\\Frame25JuneA\\Driver\\chromedriver.exe");	
+			ChromeOptions o = new ChromeOptions();
+			o.addArguments("--remote-allow-origins=*");
+			driver = new ChromeDriver(o);
 		}
 		
 		else if(bro.equals("edge"))

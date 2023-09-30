@@ -12,7 +12,7 @@ public class ReadData1_1
 	public static String readPropertyfile(String value) throws Exception
 	{
 		Properties prop = new Properties();
-		FileInputStream file = new FileInputStream("C:\\Users\\hp\\eclipse-workspace\\Frame25JuneA\\TestData\\conifig.Property");
+		FileInputStream file = new FileInputStream("C:\\Users\\hp\\Eclipse Workplace\\Frame25JuneA\\TestData\\property.file");
 	    prop.load(file);
 		return prop.getProperty(value);
 	//Here we can store the data into file variable and load this file into properties class then return value form
@@ -21,7 +21,7 @@ public class ReadData1_1
 	
     public static String readExcelFile(int rowNum,int colNum) throws Exception
     {
-    	FileInputStream file1 = new FileInputStream("C:\\Users\\hp\\eclipse-workspace\\Frame25JuneA\\TestData\\SwagLabLoginPage.xlsx");
+    	FileInputStream file1 = new FileInputStream("C:\\Users\\hp\\Eclipse Workplace\\Frame25JuneA\\TestData\\SwagLabLoginPage.xlsx");
     	Sheet excel = WorkbookFactory.create(file1).getSheet("Sheet1");
     	String value = excel.getRow(rowNum).getCell(colNum).getStringCellValue();
     	return value;
@@ -30,7 +30,7 @@ public class ReadData1_1
     //Read the excel sheet by using the for loop
     public static void main(String [] args) throws Exception
     {
-    	FileInputStream f = new FileInputStream("C:\\Users\\hp\\eclipse-workspace\\Frame25JuneA\\TestData\\SwagLabLoginPage.xlsx");
+    	FileInputStream f = new FileInputStream("C:\\Users\\hp\\Eclipse Workplace\\Frame25JuneA\\TestData\\SwagLabLoginPage.xlsx");
     	Sheet excel = WorkbookFactory.create(f).getSheet("Sheet1");
     for(int row=0;row<17;row++)
     {
@@ -46,14 +46,14 @@ public class ReadData1_1
     public static String readPropertyfile1(String value) throws Exception 
     {
     	Properties prop = new Properties();
-    	FileInputStream file = new FileInputStream("C:\\Users\\hp\\eclipse-workspace\\Frame25JuneA\\TestData\\property.file");
+    	FileInputStream file = new FileInputStream("C:\\Users\\hp\\Eclipse Workplace\\Frame25JuneA\\TestData\\property.file");
     	prop.load(file);
     	return prop.getProperty(value);
      }
     
     public static String readExcelFile1(int row,int col) throws Exception
     {
-    	FileInputStream file = new FileInputStream("C:\\Users\\hp\\eclipse-workspace\\Frame25JuneA\\TestData\\demoexcelsheet.xlsx");
+    	FileInputStream file = new FileInputStream("C:\\Users\\hp\\Eclipse Workplace\\Frame25JuneA\\TestData\\demoexcelsheet.xlsx");
     	Sheet excel = WorkbookFactory.create(file).getSheet("Sheet1");
     	return excel.getRow(row).getCell(col).getStringCellValue();
     }

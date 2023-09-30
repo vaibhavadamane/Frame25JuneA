@@ -26,9 +26,13 @@ public class CheckOutPage1_1 extends TestBase1_1
 	//Method which fill Information and go to page no 5
 	public boolean fillInformation() throws Exception
 	{
+		
 		firstName.sendKeys(ReadData1_1.readPropertyfile("firstname"));
+//		Thread.sleep(3000);
 		lastName.sendKeys(ReadData1_1.readPropertyfile("lastname"));
+//		Thread.sleep(3000);
 		postalCode.sendKeys(ReadData1_1.readPropertyfile("pin"));
+//		Thread.sleep(3000);
 		contioueButton.click();
 		return checkOutOverview.isDisplayed();
 	}

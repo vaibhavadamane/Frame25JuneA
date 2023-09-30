@@ -20,7 +20,7 @@ public class LoginPage1_1Test extends TestBase1_1
         login = new LoginPage1_1();
 	}
 	
-	@Test(enabled= true)
+	@Test(enabled= true,dependsOnMethods="verifyCurrentUrlTest")
 	public void verifyTitleTest() throws Exception
 	{
 		String title = login.verifyTitle();
@@ -31,7 +31,7 @@ public class LoginPage1_1Test extends TestBase1_1
     public void verifyCurrentUrlTest() throws Exception
 	{
     	String url = login.verifyCurrentUrl();
-    	Assert.assertEquals(ReadData1_1.readExcelFile(1,0),url);
+    	Assert.assertEquals(ReadData1_1.readExcelFile(0,0),url);
 	}
 	
 	@Test(enabled= true)
@@ -47,7 +47,7 @@ public class LoginPage1_1Test extends TestBase1_1
     Assert.assertEquals(title1,ReadData1_1.readExcelFile(2, 0));
     }
 	
-	@Test(enabled = true)
+	@Test(enabled = false,dependsOnMethods="verifyCurrentUrlTest")
 	public void verifyCurrentUrl1Test() throws Exception
     {
 	String url = login.verifyCurrentUrl1();

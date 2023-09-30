@@ -1,4 +1,7 @@
 url=https://www.saucedemo.com/
 username=standard_user
 password=secret_sauce
-browser=firefox
+browser=chrome
+firstname=Vaibhav
+lastname=Patil
+pin=423259

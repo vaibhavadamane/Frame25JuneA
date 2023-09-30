@@ -1,6 +1,7 @@
 package TestCases1;
 
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -10,6 +11,7 @@ import Page1.CartPage1_1;
 import Page1.CheckOutPage1_1;
 import Page1.InventoryPage1_1;
 import Page1.LoginPage1_1;
+import utility.CaptureScreenshot;
 
 
 public class CheckOutPage1_1Test extends TestBase1_1
@@ -41,8 +43,12 @@ public class CheckOutPage1_1Test extends TestBase1_1
 	}
 	
 	@AfterMethod
-	public void closeBroswer() 
+	public void closeBroswer(ITestResult it) throws Exception 
 	{
+		if(ITestResult.FAILURE==it.getStatus())
+		{
+			CaptureScreenshot.Screenshot1(it.getName());
+		}
 	driver.quit();
 	}
 }
